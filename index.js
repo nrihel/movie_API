@@ -8,7 +8,7 @@ async function main() {
 
     if (!movieListEl) {
         localStorage.setItem("searchTitle", Title);
-        window.location.href = "./movie.html";
+        window.location.href = "movie.html";
         return;
     }
 
