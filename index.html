@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Nerds</title>
     <link rel="stylesheet" href="stylesheet.css">
-    <script src="index.js" defer></script>
     <script src="https://kit.fontawesome.com/a72164c063.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -27,8 +26,8 @@
             <h2>Search for over 10,000 movies right here!</h2>
     </div>
     <div class="search">
-        <input type="text" id="Title" placeholder="Search by Title" onchange="main()">
-        <button onclick="main()">
+        <input type="text" id="Title" placeholder="Search by Title" target="/movie.html" onchange="main()">
+        <button target="/movie.html" onclick="main()">
             <i class="fa-solid fa-magnifying-glass"></i>
         </button>
     </div>
@@ -37,4 +36,5 @@
         </p>
     </footer>
 </body>
+<script src="index.js"></script>
 </html>
