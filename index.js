@@ -21,7 +21,7 @@ async function main() {
         .join("");
 }
 
-main();
+//main();
 
 function showMovie(title) {
     localStorage.setItem("Title", title);
