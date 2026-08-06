@@ -4,15 +4,15 @@ const titleInput = document.getElementById("Title");
 
 async function main() {
     const Title =
-        titleInput.value || localStorage.getItem("searchTitle");
+        titleInput.value || localStorage.getItem("Title");
 
     if (!movieListEl) {
-        localStorage.setItem("searchTitle", Title);
+        localStorage.setItem("Title", Title);
         window.location.href = "movie.html";
         return;
     }
 
-    const response = await fetch(`http://www.omdbapi.com/?apikey=db4e97d3&s=${Title}`);
+    const response = await fetch(`https://www.omdbapi.com/?apikey=db4e97d3&s=${Title}`);
     const movieData = await response.json();
     const movies = movieData.Search || [];
 
@@ -25,7 +25,7 @@ main();
 
 function showMovie(title) {
     localStorage.setItem("Title", title);
-    window.location.href = `${window.location.origin}/movie.html`;
+    window.location.href = "./movie.html";
 }
 
 function movieHTML(movie) {
