@@ -142,19 +142,63 @@ button {
     background-color: rgb(253, 4, 4);
 } 
 
+.sort {
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+}
+
+select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 100%;
+    max-width: 300px;
+    outline: none;
+    background-color: white;
+    box-shadow: 7px 7px 14px rgba(134, 93, 204, .3);
+    border-radius: 20px;
+    padding: 0 24px;
+    font-size: 16px;
+    color: rgb(92, 91, 91);
+    cursor: pointer;
+}
+
+option {
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    padding: 12px 24px;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-top: 24px;
+    margin: 0 auto;
+}
+
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%/3;
+}
+
+.movie {
+    display: block;
+    justify-content: center;
+    align-items: center;
 }
 
 .movie-card {
-    width: 300px;
-    height: 400px;
+    text-align: center;
+    width: 450px;
+    height: auto;
+    padding: 20px;
     margin: 24px;
-    background-color: white;
     box-shadow: 7px 7px 14px rgba(134, 93, 204, .3);
     border-radius: 20px;
     cursor: pointer;

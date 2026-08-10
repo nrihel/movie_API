@@ -14,10 +14,10 @@
             <img class="logo" src="movie logo.svg">
         </figure>
         <ul class="nav__links">
-            <a href="#" class="link 
+            <a href="/index.html" class="link 
             link__hover-effect
             link__hover-effect--white">Home</a>
-            <a href="" class="link 
+            <a href="#" class="link 
             link__hover-effect 
             link__hover-effect--white">Search</a>
         </ul>
@@ -29,6 +29,13 @@
         <input type="text" id="Title" placeholder="Search by Title" onchange="main()">
         </div>
     </div>
+    <div class="sort">
+            <select id="filter" onchange="filterMovie(event)">
+              <option value="" disabled selected>Sort</option>
+              <option value="newest">Newest</option>
+              <option value="oldest">Oldest</option>        
+            </select>
+    </div>
     <div class="container">
         <div class="row">
             <div class="movie-list">
@@ -36,9 +43,8 @@
                     <div class="movie-card">
                         <div class="movie-card__container">
                             <h3>Movie Title</h3>
-                            <p>Release Date: January 1, 2023</p>
-                            <p>Genre: Action</p>
-                            <p>Director: John Doe</p>
+                            <p>Release Date: </p>
+                            <img src="" alt="">
                         </div>
                     </div>
                 </div>
