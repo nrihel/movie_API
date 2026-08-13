@@ -39,6 +39,7 @@ h1 {
 h2 {
     width: 75%;
     font-size: 48px;
+    z-index: 3;
 }
 .nav {
     width: 100%;
@@ -86,7 +87,9 @@ h2 {
     flex-direction: column;
     text-align: center;
     align-items: center;
+    z-index: 3;
 }
+
 .title {
     width: 75%;
     display: flex;
@@ -96,11 +99,12 @@ h2 {
 
 .search {
     width: 100%;
-    position: relative;
+    position: absolute;
     padding: 36px;
     margin-top: 24px;
     display: flex;
     justify-content: center;
+    z-index: 2;
 }
 
 input {
@@ -133,6 +137,29 @@ button {
     background-color: rgb(253, 4, 4);
 } 
 
+.movie__image {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 700px;
+    transform: translateY(50px);
+}
+
 footer {
     padding: 48px;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        width: 100%;
+        font-size: 36px;
+    }
+    .title {
+        font-size: 60px;
+    }
+    .movie__image {
+        width: 100vw;
+        height: 700px;
+        transform: translateY(50px);
+    }
 }

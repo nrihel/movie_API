@@ -179,6 +179,44 @@ option {
     align-items: center;
     margin: 0 auto;
 }
+.movies {
+    
+    width: 100%;
+    
+}
+
+.movies__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    font-size: 72px;
+    color: white;
+}
+
+.fa-spinner {
+    animation: rotate 500ms linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.movie__image {
+    width: 100%;
+    height: 1300px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 24px;
+    transform: translateY(-75px);
+    z-index: 1;
+}
 
 .movie-list {
     display: flex;
@@ -207,4 +245,22 @@ option {
 
 footer {
     padding: 48px;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 48px;
+    }
+    input {
+        width: 100%;
+        font-size: 24px;
+    }
+    button {
+        width: 150px;
+        font-size: 24px;
+    }
+    .movie-card {
+        width: 75%;
+        margin: 12px;
+    }
 }

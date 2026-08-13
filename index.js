@@ -4,8 +4,17 @@ const titleInput = document.getElementById("Title");
 let movie = [];
 
 async function main() {
+
+  movieListEl.classList += ' movies__loading'
+    if (!movie) {
+      movie = await main();
+    }
+  movieListEl.classList.remove('movies__loading')
+
+
     const Title =
         titleInput.value || localStorage.getItem("Title");
+
 
     if (!movieListEl) {
         localStorage.setItem("Title", Title);
@@ -13,13 +22,12 @@ async function main() {
         return;
     }
 
+
     const response = await fetch(`https://www.omdbapi.com/?apikey=db4e97d3&s=${Title}`);
     const movieData = await response.json();
-    const movie = movieData.Search || [];
+    movie = movieData.Search || [];
+    renderMovie();
 
-    movieListEl.innerHTML = movie
-        .map((movie) => movieHTML(movie))
-        .join("");
 }
 
 if (movieListEl) {
@@ -45,10 +53,12 @@ function renderMovie(filter) {
   const movieWrapper = document.querySelector(".movie-list");
 
   if (filter === 'newest') {
-    movie.sort((a, b) => (a.Year) - (b.Year));
-  }  else if (filter === 'oldest') {
     movie.sort((a, b) => (b.Year) - (a.Year));
+  }  else if (filter === 'oldest') {
+    movie.sort((a, b) => (a.Year) - (b.Year));
   }
+
+  movieListEl.innerHTML = movie.map((movie) => movieHTML(movie)).join("");
 }
 
 function filterMovie(event) {
