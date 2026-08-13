@@ -27,7 +27,6 @@
         <button class="btn__back">← Back</button>
         </a>
         <input type="text" id="Title" placeholder="Search by Title" onchange="main()">
-        </div>
     </div>
     <div class="sort">
             <select id="filter" onchange="filterMovie(event)">
@@ -42,21 +41,19 @@
                 <div class="movie">
                     <div class="movie-card">
                         <div class="movie-card__container">
-                            <h3>Movie Title</h3>
-                            <p>Release Date: </p>
-                            <img src="" alt="">
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="movies movies__loading">
+    <div class="movies__loading" id="loader">
         <i class="fas fa-spinner fa-spin"></i>
     </div>
-</body>
 <footer>
-        <p>&copy;Nick Rihel 2026
-        </p>
-    </footer>        
+    <p>&copy;Nick Rihel 2026</p>
+</footer>  
+</body>
+      
 </html>

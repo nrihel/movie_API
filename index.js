@@ -1,6 +1,8 @@
 // API: http://www.omdbapi.com/?apikey=db4e97d3
 const movieListEl = document.querySelector(".movie-list");
 const titleInput = document.getElementById("Title");
+const loader = document.getElementById("loader");
+
 let movie = [];
 
 async function main() {
@@ -14,11 +16,15 @@ async function main() {
         return;
     }
 
-    movieWrapper.classList.add("movies__loading");
+
+    loader.classList.add("visible");   // before the fetch
+
     const response = await fetch(`https://www.omdbapi.com/?apikey=db4e97d3&s=${Title}`);
     const movieData = await response.json();
     movie = movieData.Search || [];
-    movieWrapper.classList.remove("movies__loading");
+
+    loader.classList.remove("visible"); // after
+
     renderMovie();
 
 }
