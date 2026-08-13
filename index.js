@@ -4,17 +4,9 @@ const titleInput = document.getElementById("Title");
 let movie = [];
 
 async function main() {
-
-  movieListEl.classList += ' movies__loading'
-    if (!movie) {
-      movie = await main();
-    }
-  movieListEl.classList.remove('movies__loading')
-
-
+  
     const Title =
         titleInput.value || localStorage.getItem("Title");
-
 
     if (!movieListEl) {
         localStorage.setItem("Title", Title);
@@ -22,10 +14,11 @@ async function main() {
         return;
     }
 
-
+    movieWrapper.classList.add("movies__loading");
     const response = await fetch(`https://www.omdbapi.com/?apikey=db4e97d3&s=${Title}`);
     const movieData = await response.json();
     movie = movieData.Search || [];
+    movieWrapper.classList.remove("movies__loading");
     renderMovie();
 
 }
@@ -64,4 +57,3 @@ function renderMovie(filter) {
 function filterMovie(event) {
   renderMovie(event.target.value);
 }
-renderMovie();
