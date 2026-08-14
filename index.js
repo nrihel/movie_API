@@ -17,16 +17,16 @@ async function main() {
     }
 
 
-    loader.classList.add("visible");   // before the fetch
+    loader.classList.add("visible");
 
     const response = await fetch(`https://www.omdbapi.com/?apikey=db4e97d3&s=${Title}`);
     const movieData = await response.json();
     movie = movieData.Search || [];
 
-    loader.classList.remove("visible"); // after
-
+    setTimeout(() => {
+    loader.classList.remove("visible");
     renderMovie();
-
+    }, 1000);
 }
 
 if (movieListEl) {

@@ -149,10 +149,13 @@ footer {
     padding: 48px;
 }
 
-@media (max-width: 768px) {
+@media(max-width: 768px) {
+    h1 {
+        font-size: 8px;
+    }
     h2 {
         width: 100%;
-        font-size: 36px;
+        font-size: 28px;
     }
     .title {
         font-size: 60px;
